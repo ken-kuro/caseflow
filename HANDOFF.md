@@ -24,16 +24,21 @@ npm run dev        # UI (proxies /api → :8788), prints the local URL
 committed recorded runs in `server/recordings/` with no key. Rehearse the click path in
 [docs/DEMO_RUNBOOK.md](docs/DEMO_RUNBOOK.md).
 
-## 2. Publish the repository
+## 2. Repository
 
-Push to a judge-accessible GitHub repo and paste the URL into the portal. Confirm it opens without
-authentication and that the README commands work from a fresh clone (`node_modules` present is fine to assume).
+Already published (public): **https://github.com/ken-kuro/caseflow**. Paste it into the portal. Worth a
+5-second signed-out check that it opens, and that the README commands work from a fresh clone (`node_modules`
+present is fine to assume).
 
 ## 3. Demo URL
 
-Localhost-primary is recommended (`npm run agent` + `npm run dev`). If a hosted URL is required, deploy the
-build to Cloudflare Workers first — do not advertise a URL that isn't running this build. Replay mode is the
-no-key / bad-Wi-Fi fallback either way.
+A hosted **recorded-run** demo is already live (free, no login, no key):
+**https://ken-kuro.github.io/caseflow/** — it replays genuine recorded agent runs client-side, badged
+"RECORDED RUN". Use this as the portal Demo URL. For a *live* agent run, present localhost
+(`npm run agent` + `npm run dev`); a live hosted version would require deploying to Cloudflare Workers with
+the API key stored as a Worker secret.
+
+To update the hosted demo after new recordings: `git subtree push --prefix site origin gh-pages`.
 
 ## 4. Upload the product video
 

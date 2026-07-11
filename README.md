@@ -15,6 +15,9 @@ timestamp and a real SHA-256 hash of its actual input/output.
 All data is **synthetic**. CaseFlow produces **recommendations only** — it never files a report, freezes
 funds, clears a customer, or activates policy without a human.
 
+**Live hosted demo (no login, no key):** https://ken-kuro.github.io/caseflow/ — replays genuine recorded
+agent runs client-side, badged "RECORDED RUN". For a live agent run, follow the Quickstart below.
+
 ## Architecture
 
 - `server/agent-loop.ts` — generic OpenAI-compatible streaming tool-use loop (fetch + hand-rolled SSE).

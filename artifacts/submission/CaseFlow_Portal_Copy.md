@@ -141,9 +141,10 @@ used during development to help write and test the code; they are not part of th
 
 ## Links and media
 
-- **Demo URL:** localhost-primary (`npm run agent` + `npm run dev`). Replay mode gives a no-API-key fallback
-  locally; deploy the build to Cloudflare Workers if a hosted URL is required.
-- **Repository URL:** [confirm judge-accessible GitHub URL before submitting]
+- **Demo URL:** https://ken-kuro.github.io/caseflow/ — a hosted, no-login **recorded-run** demo (replays
+  genuine agent runs client-side; badged "RECORDED RUN"). For a live agent run, clone and run locally
+  (`npm run agent` + `npm run dev`).
+- **Repository URL:** https://github.com/ken-kuro/caseflow
 - **Product video:** `artifacts/video/CaseFlow_Product_Demo.mp4` (2:09)
 - **Pitch deck:** `artifacts/pitch/CaseFlow_Pitch_Deck.pptx` (export a PDF from it if the venue needs one)
 
