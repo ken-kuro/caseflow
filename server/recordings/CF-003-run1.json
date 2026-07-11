@@ -1,0 +1,1629 @@
+{
+  "caseId": "CF-003",
+  "runId": "CF-003-RUN-01",
+  "runNumber": 1,
+  "mode": "live",
+  "status": "SEALED",
+  "recommendation": "REQUEST_EVIDENCE",
+  "createdAt": "2026-07-11T21:52:40.453Z",
+  "model": "qwen3.7-plus",
+  "events": [
+    {
+      "type": "run_start",
+      "caseId": "CF-003",
+      "mode": "live",
+      "runId": "CF-003-RUN-01"
+    },
+    {
+      "type": "role_start",
+      "role": "Triage",
+      "note": "Triage agent started"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "I"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "'ll start by gathering"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " all the evidence for"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " case CF"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "-003"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": ". Let me fetch"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " the alert, customer"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " profile, transaction history"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": ", wallet intelligence,"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " and Travel Rule payload"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " in parallel.\n\n"
+    },
+    {
+      "type": "tool_call",
+      "role": "Triage",
+      "id": "call_8cc2ae3d1bfd43bca8183e07",
+      "tool": "get_alert",
+      "args": {
+        "caseId": "CF-003"
+      },
+      "timestamp": "2026-07-11T21:51:38.584Z",
+      "inputHash": "1b882b9454623bfca2dd61aeed5eae7316ff8fb42d8b81f1bf85a71af7365dde"
+    },
+    {
+      "type": "tool_result",
+      "role": "Triage",
+      "id": "call_8cc2ae3d1bfd43bca8183e07",
+      "tool": "get_alert",
+      "summary": "TRAVEL_RULE · vendor 74",
+      "result": {
+        "caseId": "CF-003",
+        "title": "Incomplete Travel Rule payload",
+        "alertType": "TRAVEL_RULE",
+        "vendorScore": 74,
+        "status": "PAUSED",
+        "createdAt": "2026-07-11T08:30:00.000Z",
+        "note": "Vendor score is a third-party signal, not a disposition."
+      },
+      "timestamp": "2026-07-11T21:51:38.584Z",
+      "outputHash": "592edede275687c8d82161403c5701b2e656b4f182a1d89cd40f97636f1dd2c4",
+      "status": "COMPLETE"
+    },
+    {
+      "type": "tool_call",
+      "role": "Triage",
+      "id": "call_c82401defe474d7b925dda47",
+      "tool": "get_customer_profile",
+      "args": {
+        "caseId": "CF-003"
+      },
+      "timestamp": "2026-07-11T21:51:38.584Z",
+      "inputHash": "9c716568af16ab85de77bd1eb2c3b22c2f4814183f1a25e5e3634985ed7290cd"
+    },
+    {
+      "type": "tool_result",
+      "role": "Triage",
+      "id": "call_c82401defe474d7b925dda47",
+      "tool": "get_customer_profile",
+      "summary": "REVIEW · MEDIUM risk",
+      "result": {
+        "caseId": "CF-003",
+        "syntheticName": "Synthetic Customer C",
+        "kycState": "REVIEW",
+        "residency": "PH",
+        "riskTier": "MEDIUM",
+        "priorAlerts": 1
+      },
+      "timestamp": "2026-07-11T21:51:38.584Z",
+      "outputHash": "70345a9a04a21266126e220a083f0473e3c869b9d23727914afbd89019ae5736",
+      "status": "COMPLETE"
+    },
+    {
+      "type": "tool_call",
+      "role": "Triage",
+      "id": "call_9c079c29e10c4aee9de47603",
+      "tool": "get_transaction_history",
+      "args": {
+        "caseId": "CF-003"
+      },
+      "timestamp": "2026-07-11T21:51:38.585Z",
+      "inputHash": "df29ee402301bf6957b36d304610dbb3d3e75d09c3b5e50e8c36ecd0300e1783"
+    },
+    {
+      "type": "tool_result",
+      "role": "Triage",
+      "id": "call_9c079c29e10c4aee9de47603",
+      "tool": "get_transaction_history",
+      "summary": "PHP 265000 · PH → VN",
+      "result": {
+        "caseId": "CF-003",
+        "amount": 265000,
+        "currency": "PHP",
+        "corridor": "PH → VN",
+        "asset": "USDT",
+        "transfers24h": 2,
+        "counterparties": 2
+      },
+      "timestamp": "2026-07-11T21:51:38.585Z",
+      "outputHash": "7f40e552247eac40643a897e2bd2fe142c94d84143b5d391af8741abd4be2092",
+      "status": "COMPLETE"
+    },
+    {
+      "type": "tool_call",
+      "role": "Triage",
+      "id": "call_d4f40e0bd6a845bcafba32fc",
+      "tool": "get_wallet_intelligence",
+      "args": {
+        "caseId": "CF-003"
+      },
+      "timestamp": "2026-07-11T21:51:38.585Z",
+      "inputHash": "9187427371e69e066a62a1fce787bd46d4bf0ae171614c2cdb67cbeb788a3ade"
+    },
+    {
+      "type": "tool_result",
+      "role": "Triage",
+      "id": "call_d4f40e0bd6a845bcafba32fc",
+      "tool": "get_wallet_intelligence",
+      "summary": "MEDIUM exposure · 1 linked",
+      "result": {
+        "caseId": "CF-003",
+        "exposure": "MEDIUM",
+        "hops": 2,
+        "labels": [
+          "new counterparty"
+        ],
+        "linkedEntities": 1
+      },
+      "timestamp": "2026-07-11T21:51:38.585Z",
+      "outputHash": "55ffa4de67e7fa1abb9e94b1002a94791bcbbb9f631e0484d568799c781d56d3",
+      "status": "COMPLETE"
+    },
+    {
+      "type": "tool_call",
+      "role": "Triage",
+      "id": "call_3048ff77827c4ab494da05c8",
+      "tool": "get_travel_rule_payload",
+      "args": {
+        "caseId": "CF-003"
+      },
+      "timestamp": "2026-07-11T21:51:38.585Z",
+      "inputHash": "c78049f1e8204317cb30009ca6e965b54ca8ba537baffd8a10a3e54b6ccb97fa"
+    },
+    {
+      "type": "tool_result",
+      "role": "Triage",
+      "id": "call_3048ff77827c4ab494da05c8",
+      "tool": "get_travel_rule_payload",
+      "summary": "INCOMPLETE · missing beneficiary identity, beneficiary VASP",
+      "result": {
+        "caseId": "CF-003",
+        "originator": "Synthetic Customer C",
+        "beneficiary": null,
+        "beneficiaryVasp": null,
+        "completeness": "INCOMPLETE",
+        "contradictions": [
+          "Transfer residency states VN while the customer profile states PH"
+        ],
+        "missingRequiredFields": [
+          "beneficiary identity",
+          "beneficiary VASP"
+        ]
+      },
+      "timestamp": "2026-07-11T21:51:38.585Z",
+      "outputHash": "ab3e1763a09170b93c5039e91a36a8e5e7f32b57dab5bc6bcd6e95735c0bed56",
+      "status": "COMPLETE"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "Now"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " let me search for"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " relevant policy clauses regarding"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " Travel Rule completeness and"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " incomplete"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " payloads.\n\n"
+    },
+    {
+      "type": "tool_call",
+      "role": "Triage",
+      "id": "call_0edacff957ba4ebbbdc05bfd",
+      "tool": "search_policy",
+      "args": {
+        "query": "travel rule minimum data beneficiary VASP incomplete"
+      },
+      "timestamp": "2026-07-11T21:51:46.250Z",
+      "inputHash": "3631e067d764e06fcf4427add4367ac61155b575df19761651fcac9e5e72dab1"
+    },
+    {
+      "type": "tool_result",
+      "role": "Triage",
+      "id": "call_0edacff957ba4ebbbdc05bfd",
+      "tool": "search_policy",
+      "summary": "2 clause(s): TR-1.2, KYC-2.4",
+      "result": {
+        "query": "travel rule minimum data beneficiary VASP incomplete",
+        "method": "lexical keyword match",
+        "results": [
+          {
+            "clauseId": "TR-1.2",
+            "version": "2026.07",
+            "title": "Travel Rule minimum data",
+            "text": "Originator, beneficiary, and beneficiary VASP data must be present before a transfer alert can be resolved.",
+            "type": "EVIDENCE"
+          },
+          {
+            "clauseId": "KYC-2.4",
+            "version": "2026.07",
+            "title": "Identity contradictions",
+            "text": "Material contradictions between verified customer data and transfer data require analyst escalation once minimum evidence is complete.",
+            "type": "ESCALATION"
+          }
+        ]
+      },
+      "timestamp": "2026-07-11T21:51:46.250Z",
+      "outputHash": "42f3ee405341f50f2d2989e93b1b8ea4c729353f25d5bfbcb0d4161443ebd308",
+      "status": "COMPLETE"
+    },
+    {
+      "type": "tool_call",
+      "role": "Triage",
+      "id": "call_331bcd5b630c4c25a37c0542",
+      "tool": "search_policy",
+      "args": {
+        "query": "travel rule missing required fields request evidence"
+      },
+      "timestamp": "2026-07-11T21:51:46.250Z",
+      "inputHash": "eae87adcb08305a0c8f0f8bdb0487d36d1a55c3d185f573cd1dddc33cb057d72"
+    },
+    {
+      "type": "tool_result",
+      "role": "Triage",
+      "id": "call_331bcd5b630c4c25a37c0542",
+      "tool": "search_policy",
+      "summary": "3 clause(s): TR-1.2, CLR-1.1, KYC-2.4",
+      "result": {
+        "query": "travel rule missing required fields request evidence",
+        "method": "lexical keyword match",
+        "results": [
+          {
+            "clauseId": "TR-1.2",
+            "version": "2026.07",
+            "title": "Travel Rule minimum data",
+            "text": "Originator, beneficiary, and beneficiary VASP data must be present before a transfer alert can be resolved.",
+            "type": "EVIDENCE"
+          },
+          {
+            "clauseId": "CLR-1.1",
+            "version": "2026.07",
+            "title": "Explainable low-risk clearance",
+            "text": "A low-risk alert may be recommended for clearance only when required evidence is complete and no material risk indicator remains unresolved.",
+            "type": "CLEARANCE"
+          },
+          {
+            "clauseId": "KYC-2.4",
+            "version": "2026.07",
+            "title": "Identity contradictions",
+            "text": "Material contradictions between verified customer data and transfer data require analyst escalation once minimum evidence is complete.",
+            "type": "ESCALATION"
+          }
+        ]
+      },
+      "timestamp": "2026-07-11T21:51:46.250Z",
+      "outputHash": "94d1f667234d0a1d5f20905f13f12a1c5bc1c1cea4b50f0d7be07e9846c86f8f",
+      "status": "COMPLETE"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "Let me"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " also check for any"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " relevant prior cases."
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "\n\n"
+    },
+    {
+      "type": "tool_call",
+      "role": "Triage",
+      "id": "call_81dd735cec1846e28455e7d0",
+      "tool": "search_prior_cases",
+      "args": {
+        "query": "travel rule incomplete missing beneficiary VASP"
+      },
+      "timestamp": "2026-07-11T21:51:54.477Z",
+      "inputHash": "b081e5322ec4a88699c60ab68e9c7766f9fc83cf27fa121d8b43cce7c66603fb"
+    },
+    {
+      "type": "tool_result",
+      "role": "Triage",
+      "id": "call_81dd735cec1846e28455e7d0",
+      "tool": "search_prior_cases",
+      "summary": "2 prior case(s): PC-103/REQUEST_EVIDENCE, PC-101/CLEAR",
+      "result": {
+        "query": "travel rule incomplete missing beneficiary VASP",
+        "method": "lexical keyword match",
+        "results": [
+          {
+            "id": "PC-103",
+            "summary": "Incomplete Travel Rule payload missing beneficiary and beneficiary VASP. Stopped at REQUEST_EVIDENCE under TR-1.2 until identity fields were supplied.",
+            "disposition": "REQUEST_EVIDENCE"
+          },
+          {
+            "id": "PC-101",
+            "summary": "PH→SG USDC transfer to a known merchant counterparty, verified KYC, complete Travel Rule, low wallet exposure. Resolved CLEAR under CLR-1.1.",
+            "disposition": "CLEAR"
+          }
+        ]
+      },
+      "timestamp": "2026-07-11T21:51:54.477Z",
+      "outputHash": "3eaf059add6a847264a8ba3bb859d3346325275f1acfb2fc5db8014fd90f3f2e",
+      "status": "COMPLETE"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "Now I have a"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " complete picture. Let"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " me summarize the findings"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": ":\n\n**Key"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " Findings:**\n"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "1"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": ". **Travel Rule"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " payload is INCOMPLETE"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "** — beneficiary identity"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " and beneficiary V"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "ASP are both null"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "/missing.\n"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "2. **Identity"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " contradiction** — the"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " transfer references VN residency"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " while"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " the customer profile states"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " PH residency.\n"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "3. **"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "MEDIUM risk tier"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "** customer with KY"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "C state REVIEW and"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " 1 prior alert"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": ".\n4."
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " **MEDIUM wallet"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " exposure** with "
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "2 hops,"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " a new counterparty"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " label,"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " and 1 linked"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " entity.\n5"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": ". **PH→"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "VN corridor**"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " for 26"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "5"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": ",000"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " PHP in USDT"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": ".\n\n"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "**Policy Application:**"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "\n- **"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "TR-1."
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "2** requires origin"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "ator, beneficiary,"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " and beneficiary VASP"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " to be present before"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " the"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " alert can be resolved"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": ". The payload is"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " missing beneficiary and beneficiary"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " VASP"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": ".\n- **"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "KY"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "C-2."
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "4** requires escalation"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " for"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " identity contradictions, but"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " only"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " *once minimum evidence"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " is complete* —"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " which it is not"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " here.\n-"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " **"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "CLR-1."
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "1** requires complete"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " evidence and no unresolved"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " risk indicators — not"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " met.\n-"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " **Prior case PC"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "-10"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "3** confirms:"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " incomplete Travel Rule payload"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " with missing beneficiary/V"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "ASP"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " → REQUEST_EVID"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "ENCE."
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "\n\nThe mandatory disposition"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " is **REQUEST"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "_EVIDENCE**"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " because the Travel Rule"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " minimum"
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": " data is incomplete."
+    },
+    {
+      "type": "thinking",
+      "role": "Triage",
+      "text": "\n\n"
+    },
+    {
+      "type": "tool_call",
+      "role": "Triage",
+      "id": "call_7109ba6b3a43446381cfb7bb",
+      "tool": "submit_decision",
+      "args": {
+        "recommendation": "REQUEST_EVIDENCE",
+        "confidence": 0.95,
+        "rationale": "The Travel Rule payload for CF-003 is INCOMPLETE: both beneficiary identity and beneficiary VASP are missing (null). Per TR-1.2, originator, beneficiary, and beneficiary VASP data must be present before a transfer alert can be resolved. Without these fields, no defensible CLEAR or ESCALATE disposition is possible. Additionally, a material identity contradiction exists (transfer residency VN vs. customer profile PH), which under KYC-2.4 would require escalation once minimum evidence is complete — but the evidence is not yet complete. This aligns with prior case PC-103, which was resolved as REQUEST_EVIDENCE under identical circumstances. The missing fields must be obtained before any further disposition can be made.",
+        "citations": [
+          {
+            "clauseId": "TR-1.2",
+            "reason": "Originator, beneficiary, and beneficiary VASP data must be present before a transfer alert can be resolved. Beneficiary and beneficiary VASP are both missing."
+          },
+          {
+            "clauseId": "KYC-2.4",
+            "reason": "Material contradiction between customer residency (PH) and transfer residency (VN) requires escalation, but only once minimum evidence is complete — which it is not."
+          },
+          {
+            "clauseId": "CLR-1.1",
+            "reason": "Clearance is not possible because required evidence is incomplete and material risk indicators (contradiction, medium exposure) remain unresolved."
+          }
+        ],
+        "riskIndicators": [
+          "Incomplete Travel Rule payload — missing beneficiary identity",
+          "Incomplete Travel Rule payload — missing beneficiary VASP",
+          "Identity contradiction: transfer residency VN vs. customer profile PH",
+          "MEDIUM wallet exposure with 2 hops and new counterparty label",
+          "MEDIUM risk tier customer with KYC state REVIEW and 1 prior alert",
+          "PH→VN corridor cross-border transfer"
+        ],
+        "suspectedTypology": "",
+        "missingEvidence": [
+          "beneficiary identity",
+          "beneficiary VASP"
+        ],
+        "nextAction": "Request the originating VASP or counterparty to supply the missing beneficiary identity and beneficiary VASP information. Once received, re-evaluate the alert — particularly the PH/VN residency contradiction and medium wallet exposure — for potential escalation under KYC-2.4.",
+        "escalationNarrative": ""
+      },
+      "timestamp": "2026-07-11T21:52:19.456Z",
+      "inputHash": "c33c55cadc60abb0c77f508d983147bfb55bfead67a09c46624bdf6e3224c4ec"
+    },
+    {
+      "type": "role_end",
+      "role": "Triage",
+      "note": "Triage finished via submit_decision"
+    },
+    {
+      "type": "role_start",
+      "role": "Compliance Challenger",
+      "note": "Compliance Challenger agent started"
+    },
+    {
+      "type": "tool_call",
+      "role": "Compliance Challenger",
+      "id": "call_678d5302b34048b4ac519c53",
+      "tool": "get_travel_rule_payload",
+      "args": {
+        "caseId": "CF-003"
+      },
+      "timestamp": "2026-07-11T21:52:24.353Z",
+      "inputHash": "c78049f1e8204317cb30009ca6e965b54ca8ba537baffd8a10a3e54b6ccb97fa"
+    },
+    {
+      "type": "tool_result",
+      "role": "Compliance Challenger",
+      "id": "call_678d5302b34048b4ac519c53",
+      "tool": "get_travel_rule_payload",
+      "summary": "INCOMPLETE · missing beneficiary identity, beneficiary VASP",
+      "result": {
+        "caseId": "CF-003",
+        "originator": "Synthetic Customer C",
+        "beneficiary": null,
+        "beneficiaryVasp": null,
+        "completeness": "INCOMPLETE",
+        "contradictions": [
+          "Transfer residency states VN while the customer profile states PH"
+        ],
+        "missingRequiredFields": [
+          "beneficiary identity",
+          "beneficiary VASP"
+        ]
+      },
+      "timestamp": "2026-07-11T21:52:24.353Z",
+      "outputHash": "ab3e1763a09170b93c5039e91a36a8e5e7f32b57dab5bc6bcd6e95735c0bed56",
+      "status": "COMPLETE"
+    },
+    {
+      "type": "tool_call",
+      "role": "Compliance Challenger",
+      "id": "call_a979d31061254f19ab924b66",
+      "tool": "get_customer_profile",
+      "args": {
+        "caseId": "CF-003"
+      },
+      "timestamp": "2026-07-11T21:52:24.353Z",
+      "inputHash": "9c716568af16ab85de77bd1eb2c3b22c2f4814183f1a25e5e3634985ed7290cd"
+    },
+    {
+      "type": "tool_result",
+      "role": "Compliance Challenger",
+      "id": "call_a979d31061254f19ab924b66",
+      "tool": "get_customer_profile",
+      "summary": "REVIEW · MEDIUM risk",
+      "result": {
+        "caseId": "CF-003",
+        "syntheticName": "Synthetic Customer C",
+        "kycState": "REVIEW",
+        "residency": "PH",
+        "riskTier": "MEDIUM",
+        "priorAlerts": 1
+      },
+      "timestamp": "2026-07-11T21:52:24.353Z",
+      "outputHash": "70345a9a04a21266126e220a083f0473e3c869b9d23727914afbd89019ae5736",
+      "status": "COMPLETE"
+    },
+    {
+      "type": "tool_call",
+      "role": "Compliance Challenger",
+      "id": "call_db4aa95113d14c00a1951f8d",
+      "tool": "search_policy",
+      "args": {
+        "query": "travel rule minimum data beneficiary originator VASP"
+      },
+      "timestamp": "2026-07-11T21:52:24.353Z",
+      "inputHash": "20d5d49622da91b7fc6145e6feb4e239f3f321a5a45a2c137673963c2659bcc0"
+    },
+    {
+      "type": "tool_result",
+      "role": "Compliance Challenger",
+      "id": "call_db4aa95113d14c00a1951f8d",
+      "tool": "search_policy",
+      "summary": "2 clause(s): TR-1.2, KYC-2.4",
+      "result": {
+        "query": "travel rule minimum data beneficiary originator VASP",
+        "method": "lexical keyword match",
+        "results": [
+          {
+            "clauseId": "TR-1.2",
+            "version": "2026.07",
+            "title": "Travel Rule minimum data",
+            "text": "Originator, beneficiary, and beneficiary VASP data must be present before a transfer alert can be resolved.",
+            "type": "EVIDENCE"
+          },
+          {
+            "clauseId": "KYC-2.4",
+            "version": "2026.07",
+            "title": "Identity contradictions",
+            "text": "Material contradictions between verified customer data and transfer data require analyst escalation once minimum evidence is complete.",
+            "type": "ESCALATION"
+          }
+        ]
+      },
+      "timestamp": "2026-07-11T21:52:24.353Z",
+      "outputHash": "d49b1f4e03603ae4d6906142e103c9f883eb6dd83376ab03dd2e60a3afdd7075",
+      "status": "COMPLETE"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": "**Verification Summary"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": ":**\n\n1."
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " **Travel Rule"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " payload** — Conf"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": "irmed INCOMPLETE:"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " `beneficiary:"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " null`, `benef"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": "iciaryVasp:"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " null`, missing fields"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " exactly as stated."
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " Contr"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": "adiction (VN"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " vs PH"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": ") confirmed. ✅"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": "\n2."
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " **Customer profile**"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " — Confirmed:"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " residency PH, risk"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " tier MEDIUM,"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " KYC state REVIEW"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": ", 1 prior"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " alert."
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " ✅\n3."
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " **Policy citations**:"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": "\n   - **"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": "TR-1."
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": "2**: Verified —"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " \"Originator,"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " beneficiary, and beneficiary"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " VASP data must"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " be present before a"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " transfer alert can be"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " resolved.\""
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " Directly supports REQUEST"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": "_EVIDENCE."
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " ✅\n   -"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " **KYC"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": "-2.4"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": "**: Verified — \""
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": "Material contradictions…require"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " analyst escalation **"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": "once minimum evidence is"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " complete**.\" Correct"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": "ly cited to explain"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " why escalation is deferred"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": ". ✅\n  "
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " - **CLR-"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": "1.1**:"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " Not independently searched,"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " but the logic"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " (no clearance with"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " incomplete evidence + unresolved"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " risk) is"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " sound and follows from"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " TR-1."
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": "2.\n4"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": ". **Disposition"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " logic** — With"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " an INCOMPLETE Travel"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " Rule payload, neither"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " CLEAR nor ESCAL"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": "ATE is defensible"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": ". REQUEST_EVID"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": "ENCE is the only"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " correct disposition. ✅"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": "\n5."
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " **Risk indicators**"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " — All"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " match fetched data."
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " ✅\n\nThe"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " decision is well-supported"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": ", correctly"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " cited, and the"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " disposition is the only"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " defensible one"
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": " given the evidence."
+    },
+    {
+      "type": "thinking",
+      "role": "Compliance Challenger",
+      "text": "\n\n"
+    },
+    {
+      "type": "tool_call",
+      "role": "Compliance Challenger",
+      "id": "call_b05f9c87fcc94d51a03ae160",
+      "tool": "approve_decision",
+      "args": {
+        "note": "Decision verified. Travel Rule payload confirmed INCOMPLETE (beneficiary and beneficiary VASP both null). TR-1.2 correctly cited to justify REQUEST_EVIDENCE — no resolution possible without minimum data. KYC-2.4 correctly cited to note the PH/VN contradiction requires escalation only after evidence is complete. All risk indicators match fetched data. Disposition is sound."
+      },
+      "timestamp": "2026-07-11T21:52:40.452Z",
+      "inputHash": "1acd521d57ddc368ba4b2a74aa74039098e2489bfc169d9858e92a1a3d1ab364"
+    },
+    {
+      "type": "role_end",
+      "role": "Compliance Challenger",
+      "note": "Compliance Challenger finished via approve_decision"
+    },
+    {
+      "type": "approval",
+      "role": "Compliance Challenger",
+      "note": "Decision verified. Travel Rule payload confirmed INCOMPLETE (beneficiary and beneficiary VASP both null). TR-1.2 correctly cited to justify REQUEST_EVIDENCE — no resolution possible without minimum data. KYC-2.4 correctly cited to note the PH/VN contradiction requires escalation only after evidence is complete. All risk indicators match fetched data. Disposition is sound."
+    },
+    {
+      "type": "guardrail",
+      "ok": true,
+      "errors": [],
+      "note": "Guardrail validation passed."
+    },
+    {
+      "type": "decision",
+      "recommendation": "REQUEST_EVIDENCE",
+      "packet": {
+        "caseId": "CF-003",
+        "runId": "CF-003-RUN-01",
+        "policyVersion": "2026.07",
+        "recommendation": "REQUEST_EVIDENCE",
+        "confidence": 0.95,
+        "rationale": "The Travel Rule payload for CF-003 is INCOMPLETE: both beneficiary identity and beneficiary VASP are missing (null). Per TR-1.2, originator, beneficiary, and beneficiary VASP data must be present before a transfer alert can be resolved. Without these fields, no defensible CLEAR or ESCALATE disposition is possible. Additionally, a material identity contradiction exists (transfer residency VN vs. customer profile PH), which under KYC-2.4 would require escalation once minimum evidence is complete — but the evidence is not yet complete. This aligns with prior case PC-103, which was resolved as REQUEST_EVIDENCE under identical circumstances. The missing fields must be obtained before any further disposition can be made.",
+        "evidence": [
+          {
+            "id": "CF-003-E1",
+            "label": "Customer profile",
+            "value": "REVIEW · PH · MEDIUM risk · 1 prior alerts",
+            "source": "get_customer_profile",
+            "timestamp": "2026-07-11T08:30:00.000Z",
+            "reliability": "HIGH"
+          },
+          {
+            "id": "CF-003-E2",
+            "label": "Transaction",
+            "value": "PHP 265,000 · PH → VN · USDT · 2 transfers/24h · 2 counterparties",
+            "source": "get_transaction_history",
+            "timestamp": "2026-07-11T08:30:00.000Z",
+            "reliability": "HIGH"
+          },
+          {
+            "id": "CF-003-E3",
+            "label": "Wallet intelligence",
+            "value": "MEDIUM exposure · 2 hops · 1 linked entities · new counterparty",
+            "source": "get_wallet_intelligence",
+            "timestamp": "2026-07-11T08:30:00.000Z",
+            "reliability": "MEDIUM"
+          },
+          {
+            "id": "CF-003-E4",
+            "label": "Travel Rule payload",
+            "value": "INCOMPLETE · Transfer residency states VN while the customer profile states PH",
+            "source": "get_travel_rule_payload",
+            "timestamp": "2026-07-11T08:30:00.000Z",
+            "reliability": "LOW",
+            "contradiction": "Transfer residency states VN while the customer profile states PH"
+          }
+        ],
+        "citations": [
+          {
+            "clauseId": "TR-1.2",
+            "version": "2026.07",
+            "reason": "Originator, beneficiary, and beneficiary VASP data must be present before a transfer alert can be resolved. Beneficiary and beneficiary VASP are both missing."
+          },
+          {
+            "clauseId": "KYC-2.4",
+            "version": "2026.07",
+            "reason": "Material contradiction between customer residency (PH) and transfer residency (VN) requires escalation, but only once minimum evidence is complete — which it is not."
+          },
+          {
+            "clauseId": "CLR-1.1",
+            "version": "2026.07",
+            "reason": "Clearance is not possible because required evidence is incomplete and material risk indicators (contradiction, medium exposure) remain unresolved."
+          }
+        ],
+        "riskIndicators": [
+          "Incomplete Travel Rule payload — missing beneficiary identity",
+          "Incomplete Travel Rule payload — missing beneficiary VASP",
+          "Identity contradiction: transfer residency VN vs. customer profile PH",
+          "MEDIUM wallet exposure with 2 hops and new counterparty label",
+          "MEDIUM risk tier customer with KYC state REVIEW and 1 prior alert",
+          "PH→VN corridor cross-border transfer"
+        ],
+        "suspectedTypology": null,
+        "objections": [],
+        "missingEvidence": [
+          "beneficiary identity",
+          "beneficiary VASP"
+        ],
+        "nextAction": "Request the originating VASP or counterparty to supply the missing beneficiary identity and beneficiary VASP information. Once received, re-evaluate the alert — particularly the PH/VN residency contradiction and medium wallet exposure — for potential escalation under KYC-2.4.",
+        "escalationNarrative": null,
+        "trace": [
+          {
+            "id": "EV-c5e94529",
+            "actor": "Triage",
+            "action": "Executed get_alert",
+            "tool": "get_alert",
+            "inputHash": "1b882b9454623bfca2dd61aeed5eae7316ff8fb42d8b81f1bf85a71af7365dde",
+            "outputHash": "592edede275687c8d82161403c5701b2e656b4f182a1d89cd40f97636f1dd2c4",
+            "timestamp": "2026-07-11T21:51:38.584Z",
+            "status": "COMPLETE"
+          },
+          {
+            "id": "EV-f81078f6",
+            "actor": "Triage",
+            "action": "Executed get_customer_profile",
+            "tool": "get_customer_profile",
+            "inputHash": "9c716568af16ab85de77bd1eb2c3b22c2f4814183f1a25e5e3634985ed7290cd",
+            "outputHash": "70345a9a04a21266126e220a083f0473e3c869b9d23727914afbd89019ae5736",
+            "timestamp": "2026-07-11T21:51:38.584Z",
+            "status": "COMPLETE"
+          },
+          {
+            "id": "EV-5d3989c7",
+            "actor": "Triage",
+            "action": "Executed get_transaction_history",
+            "tool": "get_transaction_history",
+            "inputHash": "df29ee402301bf6957b36d304610dbb3d3e75d09c3b5e50e8c36ecd0300e1783",
+            "outputHash": "7f40e552247eac40643a897e2bd2fe142c94d84143b5d391af8741abd4be2092",
+            "timestamp": "2026-07-11T21:51:38.585Z",
+            "status": "COMPLETE"
+          },
+          {
+            "id": "EV-e553b0af",
+            "actor": "Triage",
+            "action": "Executed get_wallet_intelligence",
+            "tool": "get_wallet_intelligence",
+            "inputHash": "9187427371e69e066a62a1fce787bd46d4bf0ae171614c2cdb67cbeb788a3ade",
+            "outputHash": "55ffa4de67e7fa1abb9e94b1002a94791bcbbb9f631e0484d568799c781d56d3",
+            "timestamp": "2026-07-11T21:51:38.585Z",
+            "status": "COMPLETE"
+          },
+          {
+            "id": "EV-588ec77e",
+            "actor": "Triage",
+            "action": "Executed get_travel_rule_payload",
+            "tool": "get_travel_rule_payload",
+            "inputHash": "c78049f1e8204317cb30009ca6e965b54ca8ba537baffd8a10a3e54b6ccb97fa",
+            "outputHash": "ab3e1763a09170b93c5039e91a36a8e5e7f32b57dab5bc6bcd6e95735c0bed56",
+            "timestamp": "2026-07-11T21:51:38.585Z",
+            "status": "COMPLETE"
+          },
+          {
+            "id": "EV-80f9ca05",
+            "actor": "Triage",
+            "action": "Executed search_policy",
+            "tool": "search_policy",
+            "inputHash": "3631e067d764e06fcf4427add4367ac61155b575df19761651fcac9e5e72dab1",
+            "outputHash": "42f3ee405341f50f2d2989e93b1b8ea4c729353f25d5bfbcb0d4161443ebd308",
+            "timestamp": "2026-07-11T21:51:46.250Z",
+            "status": "COMPLETE"
+          },
+          {
+            "id": "EV-ff31380a",
+            "actor": "Triage",
+            "action": "Executed search_policy",
+            "tool": "search_policy",
+            "inputHash": "eae87adcb08305a0c8f0f8bdb0487d36d1a55c3d185f573cd1dddc33cb057d72",
+            "outputHash": "94d1f667234d0a1d5f20905f13f12a1c5bc1c1cea4b50f0d7be07e9846c86f8f",
+            "timestamp": "2026-07-11T21:51:46.250Z",
+            "status": "COMPLETE"
+          },
+          {
+            "id": "EV-4a7e658c",
+            "actor": "Triage",
+            "action": "Executed search_prior_cases",
+            "tool": "search_prior_cases",
+            "inputHash": "b081e5322ec4a88699c60ab68e9c7766f9fc83cf27fa121d8b43cce7c66603fb",
+            "outputHash": "3eaf059add6a847264a8ba3bb859d3346325275f1acfb2fc5db8014fd90f3f2e",
+            "timestamp": "2026-07-11T21:51:54.477Z",
+            "status": "COMPLETE"
+          },
+          {
+            "id": "EV-4faac521",
+            "actor": "Triage",
+            "action": "Called submit_decision",
+            "tool": "submit_decision",
+            "inputHash": "c33c55cadc60abb0c77f508d983147bfb55bfead67a09c46624bdf6e3224c4ec",
+            "outputHash": "332ddb00d111581386a54b79f7f57765ffc70cf17001c124c3db983a6e7d131b",
+            "timestamp": "2026-07-11T21:52:19.456Z",
+            "status": "COMPLETE"
+          },
+          {
+            "id": "EV-2b7d6e45",
+            "actor": "Compliance Challenger",
+            "action": "Executed get_travel_rule_payload",
+            "tool": "get_travel_rule_payload",
+            "inputHash": "c78049f1e8204317cb30009ca6e965b54ca8ba537baffd8a10a3e54b6ccb97fa",
+            "outputHash": "ab3e1763a09170b93c5039e91a36a8e5e7f32b57dab5bc6bcd6e95735c0bed56",
+            "timestamp": "2026-07-11T21:52:24.353Z",
+            "status": "COMPLETE"
+          },
+          {
+            "id": "EV-ce73a815",
+            "actor": "Compliance Challenger",
+            "action": "Executed get_customer_profile",
+            "tool": "get_customer_profile",
+            "inputHash": "9c716568af16ab85de77bd1eb2c3b22c2f4814183f1a25e5e3634985ed7290cd",
+            "outputHash": "70345a9a04a21266126e220a083f0473e3c869b9d23727914afbd89019ae5736",
+            "timestamp": "2026-07-11T21:52:24.353Z",
+            "status": "COMPLETE"
+          },
+          {
+            "id": "EV-d9f7a99e",
+            "actor": "Compliance Challenger",
+            "action": "Executed search_policy",
+            "tool": "search_policy",
+            "inputHash": "20d5d49622da91b7fc6145e6feb4e239f3f321a5a45a2c137673963c2659bcc0",
+            "outputHash": "d49b1f4e03603ae4d6906142e103c9f883eb6dd83376ab03dd2e60a3afdd7075",
+            "timestamp": "2026-07-11T21:52:24.353Z",
+            "status": "COMPLETE"
+          },
+          {
+            "id": "EV-1813994e",
+            "actor": "Compliance Challenger",
+            "action": "Called approve_decision",
+            "tool": "approve_decision",
+            "inputHash": "1acd521d57ddc368ba4b2a74aa74039098e2489bfc169d9858e92a1a3d1ab364",
+            "outputHash": "332ddb00d111581386a54b79f7f57765ffc70cf17001c124c3db983a6e7d131b",
+            "timestamp": "2026-07-11T21:52:40.452Z",
+            "status": "COMPLETE"
+          },
+          {
+            "id": "EV-80379028",
+            "actor": "Orchestrator",
+            "action": "Guardrail validation passed",
+            "tool": "packet.validate",
+            "inputHash": "13a90cb3f8cf775493a096c9e041f840559e5f7a6c17b1c0287fe2d35736a0fb",
+            "outputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "timestamp": "2026-07-11T21:52:40.453Z",
+            "status": "COMPLETE"
+          },
+          {
+            "id": "EV-5f78f8e8",
+            "actor": "Orchestrator",
+            "action": "Sealed REQUEST_EVIDENCE decision",
+            "tool": "packet.seal",
+            "inputHash": "7873fd6516cc7ee72f177629bb5477c3ff8786d83756e30656d0761589c5acf3",
+            "outputHash": "65d382e694e07e935d24eecb4fcd2ee7d0c81ef15e35514149fef10158774fe1",
+            "timestamp": "2026-07-11T21:52:40.453Z",
+            "status": "COMPLETE"
+          }
+        ],
+        "critiqueRounds": 1,
+        "generatedAt": "2026-07-11T21:52:40.453Z",
+        "humanDisposition": null,
+        "overrideReason": null
+      }
+    },
+    {
+      "type": "run_complete",
+      "runId": "CF-003-RUN-01",
+      "recommendation": "REQUEST_EVIDENCE",
+      "status": "SEALED"
+    }
+  ]
+}

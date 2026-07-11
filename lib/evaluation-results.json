@@ -1,0 +1,198 @@
+{
+  "status": "MEASURED",
+  "model": "qwen3.7-plus",
+  "temperature": 0.2,
+  "generatedAt": "2026-07-11T22:04:35.552Z",
+  "caseCount": 20,
+  "metrics": {
+    "dispositionAgreement": 0.9,
+    "policyCitationRecall": 1,
+    "requestEvidenceRecall": 1,
+    "unsupportedClaimCount": 7,
+    "medianWorkflowMs": 82576,
+    "challengerBlockedRuns": 0,
+    "agentFailures": 0
+  },
+  "perCase": [
+    {
+      "caseId": "EV-01",
+      "expected": "CLEAR",
+      "actual": "CLEAR",
+      "citationOk": true,
+      "pass": true,
+      "ms": 84212,
+      "confidence": 0.92
+    },
+    {
+      "caseId": "EV-02",
+      "expected": "CLEAR",
+      "actual": "CLEAR",
+      "citationOk": true,
+      "pass": true,
+      "ms": 77902,
+      "confidence": 0.92
+    },
+    {
+      "caseId": "EV-03",
+      "expected": "CLEAR",
+      "actual": "CLEAR",
+      "citationOk": true,
+      "pass": true,
+      "ms": 81820,
+      "confidence": 0.92
+    },
+    {
+      "caseId": "EV-04",
+      "expected": "CLEAR",
+      "actual": "CLEAR",
+      "citationOk": true,
+      "pass": true,
+      "ms": 74349,
+      "confidence": 0.95
+    },
+    {
+      "caseId": "EV-05",
+      "expected": "CLEAR",
+      "actual": "CLEAR",
+      "citationOk": true,
+      "pass": true,
+      "ms": 78015,
+      "confidence": 0.95
+    },
+    {
+      "caseId": "EV-06",
+      "expected": "ESCALATE",
+      "actual": "ESCALATE",
+      "citationOk": true,
+      "pass": true,
+      "ms": 86479,
+      "confidence": 0.9
+    },
+    {
+      "caseId": "EV-07",
+      "expected": "ESCALATE",
+      "actual": "ESCALATE",
+      "citationOk": true,
+      "pass": true,
+      "ms": 97706,
+      "confidence": 0.88
+    },
+    {
+      "caseId": "EV-08",
+      "expected": "ESCALATE",
+      "actual": "ESCALATE",
+      "citationOk": true,
+      "pass": true,
+      "ms": 88871,
+      "confidence": 0.88
+    },
+    {
+      "caseId": "EV-09",
+      "expected": "ESCALATE",
+      "actual": "ESCALATE",
+      "citationOk": true,
+      "pass": true,
+      "ms": 83331,
+      "confidence": 0.92
+    },
+    {
+      "caseId": "EV-10",
+      "expected": "ESCALATE",
+      "actual": "CLEAR",
+      "citationOk": true,
+      "pass": false,
+      "ms": 107969,
+      "confidence": 0.82
+    },
+    {
+      "caseId": "EV-11",
+      "expected": "ESCALATE",
+      "actual": "ESCALATE",
+      "citationOk": true,
+      "pass": true,
+      "ms": 104625,
+      "confidence": 0.65
+    },
+    {
+      "caseId": "EV-12",
+      "expected": "ESCALATE",
+      "actual": "CLEAR",
+      "citationOk": true,
+      "pass": false,
+      "ms": 104338,
+      "confidence": 0.85
+    },
+    {
+      "caseId": "EV-13",
+      "expected": "REQUEST_EVIDENCE",
+      "actual": "REQUEST_EVIDENCE",
+      "citationOk": true,
+      "pass": true,
+      "ms": 59048,
+      "confidence": 0.95
+    },
+    {
+      "caseId": "EV-14",
+      "expected": "REQUEST_EVIDENCE",
+      "actual": "REQUEST_EVIDENCE",
+      "citationOk": true,
+      "pass": true,
+      "ms": 49745,
+      "confidence": 0.95
+    },
+    {
+      "caseId": "EV-15",
+      "expected": "REQUEST_EVIDENCE",
+      "actual": "REQUEST_EVIDENCE",
+      "citationOk": true,
+      "pass": true,
+      "ms": 60429,
+      "confidence": 0.95
+    },
+    {
+      "caseId": "EV-16",
+      "expected": "REQUEST_EVIDENCE",
+      "actual": "REQUEST_EVIDENCE",
+      "citationOk": true,
+      "pass": true,
+      "ms": 62413,
+      "confidence": 0.95
+    },
+    {
+      "caseId": "EV-17",
+      "expected": "REQUEST_EVIDENCE",
+      "actual": "REQUEST_EVIDENCE",
+      "citationOk": true,
+      "pass": true,
+      "ms": 58691,
+      "confidence": 0.95
+    },
+    {
+      "caseId": "EV-18",
+      "expected": "ESCALATE",
+      "actual": "ESCALATE",
+      "citationOk": true,
+      "pass": true,
+      "ms": 97380,
+      "confidence": 0.85
+    },
+    {
+      "caseId": "EV-19",
+      "expected": "ESCALATE",
+      "actual": "ESCALATE",
+      "citationOk": true,
+      "pass": true,
+      "ms": 73403,
+      "confidence": 0.85
+    },
+    {
+      "caseId": "EV-20",
+      "expected": "ESCALATE",
+      "actual": "ESCALATE",
+      "citationOk": true,
+      "pass": true,
+      "ms": 97257,
+      "confidence": 0.85
+    }
+  ]
+}

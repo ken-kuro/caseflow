@@ -1,0 +1,50 @@
+1
+00:00:00,000 --> 00:00:19,513
+CaseFlow is an agentic alert-resolution workspace for GoTyme's 
+anti-money-laundering and know-your-transaction analysts. It begins where 
+monitoring ends: at an alert. All data shown is synthetic. This case has an 
+incomplete Travel Rule payload, and the analyst's goal is explicit. Reach a 
+defensible next action, not blindly trust the vendor score.
+
+2
+00:00:19,513 --> 00:00:41,570
+When the analyst runs CaseFlow, a live language model agent plans, then calls 
+tools. It fetches the customer profile, the transaction, wallet intelligence, 
+and the Travel Rule payload, and it searches the versioned policy corpus. 
+Each tool call carries real arguments, and every step becomes a timestamped, 
+SHA-256 hashed audit event. Nothing is fabricated.
+
+3
+00:00:41,570 --> 00:01:04,634
+A second language model role, the Compliance Challenger, adversarially 
+reviews the decision. Here, beneficiary identity and beneficiary VASP are 
+missing. Under clause TR-1.2 the evidence is incomplete, so CaseFlow returns 
+request evidence and names exactly what is missing. A deterministic guardrail 
+guarantees an incomplete Travel Rule payload can never be sealed as clear or 
+escalate.
+
+4
+00:01:04,634 --> 00:01:31,341
+The analyst adds the seeded beneficiary payload and resumes the same case. No 
+audit trail is lost. The agent re-investigates with the now complete 
+evidence. A residency contradiction remains, so under clause KYC-2.4 it now 
+recommends escalate, with calibrated confidence, cited clauses, evidence 
+identifiers, and an analyst-ready narrative. It is still a recommendation. 
+The analyst accepts, overrides with a reason, or requests more evidence.
+
+5
+00:01:31,341 --> 00:01:49,746
+Nothing here is asserted. Running the real agent over twenty labelled 
+synthetic cases, CaseFlow measured ninety percent disposition agreement, one 
+hundred percent policy citation recall, and one hundred percent 
+request-evidence recall, with zero fabricated packets. The labels live 
+outside the runtime prompts, and misses are reported honestly.
+
+6
+00:01:49,746 --> 00:02:08,721
+This is CaseFlow's core idea. Non-deterministic reasoning inside 
+deterministic governance. The model plans, investigates, and argues, while 
+typed contracts, round limits, and hard evidence gates decide what can be 
+sealed. And learning stays human gated. Analyst feedback drafts a versioned 
+policy proposal, never a silent change.
+
