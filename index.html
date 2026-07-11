@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CaseFlow — AML/KYT analyst review (recorded demo)</title>
+  <meta name="description" content="CaseFlow: an agentic AML/KYT alert-resolution workspace. Hosted recorded-run demo." />
+  <link rel="stylesheet" href="app.css" />
+  <style>
+    /* Hosted-demo banner + a couple of static-only helpers */
+    .demo-banner { display:flex; gap:10px; align-items:center; justify-content:center; flex-wrap:wrap;
+      padding:8px 14px; background:#0e2c3b; color:#dff4ed; font-size:11px; font-weight:600; }
+    .demo-banner a { color:#7fe0d2; }
+    .demo-banner .dot { color:#7fe0d2; }
+    .goal-strip .primary-button.replaying { opacity:.6; }
+  </style>
+</head>
+<body>
+  <div class="demo-banner">
+    <span class="dot">▶</span>
+    <span>Hosted <strong>recorded-run</strong> demo — replays genuine agent runs client-side, no API key, no live model.</span>
+    <span class="dot">·</span>
+    <span>For a live run, clone and <code>npm run agent</code> + <code>npm run dev</code> — <a href="https://github.com/ken-kuro/caseflow" target="_blank" rel="noopener">source</a>.</span>
+  </div>
+  <div id="root"></div>
+  <script src="app.js"></script>
+</body>
+</html>
