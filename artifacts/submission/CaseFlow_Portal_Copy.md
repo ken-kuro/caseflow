@@ -141,7 +141,7 @@ used during development to help write and test the code; they are not part of th
 
 ## Links and media
 
-- **Demo URL:** https://ken-kuro.github.io/caseflow/ — a hosted, no-login **recorded-run** demo (replays
+- **Demo URL:** https://caseflow.hieuhm.com/ — a hosted, no-login **recorded-run** demo (replays
   genuine agent runs client-side; badged "RECORDED RUN"). For a live agent run, clone and run locally
   (`npm run agent` + `npm run dev`).
 - **Repository URL:** https://github.com/ken-kuro/caseflow

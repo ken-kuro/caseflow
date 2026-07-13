@@ -33,12 +33,15 @@ present is fine to assume).
 ## 3. Demo URL
 
 A hosted **recorded-run** demo is already live (free, no login, no key):
-**https://ken-kuro.github.io/caseflow/** — it replays genuine recorded agent runs client-side, badged
-"RECORDED RUN". Use this as the portal Demo URL. For a *live* agent run, present localhost
-(`npm run agent` + `npm run dev`); a live hosted version would require deploying to Cloudflare Workers with
-the API key stored as a Worker secret.
+**https://caseflow.hieuhm.com/** — it replays genuine recorded agent runs client-side, badged
+"RECORDED RUN". Use this as the portal Demo URL. (`https://ken-kuro.github.io/caseflow/` also works and
+redirects here.) For a *live* agent run, present localhost (`npm run agent` + `npm run dev`); a live hosted
+version would require deploying to Cloudflare Workers with the API key stored as a Worker secret.
 
-To update the hosted demo after new recordings: `git subtree push --prefix site origin gh-pages`.
+- The TLS certificate is provisioned and HTTPS serves 200. In the repo's **Settings → Pages**, tick
+  **Enforce HTTPS** so http:// visitors are upgraded.
+- The custom domain is pinned in `site/CNAME`, so redeploys keep it. To update the hosted demo after new
+  recordings: `git subtree push --prefix site origin gh-pages`.
 
 ## 4. Upload the product video
 
